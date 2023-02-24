@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Razer;
+  src: url("/Fonts/RazerF5-Reg.otf");
+}
+
+html,
+body,
+#root {
+  @apply h-full;
+}
+
+.nav-item {
+  @apply cursor-pointer hover:text-primary-100 transition-colors duration-300;
+}
+.bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.razer-edge {
+  background-image: url("/Backgrounds/razer-edge-b-desktop.jpg");
+  background-position: center 75%;
+}
+.razer-blade {
+  background-image: url("/Backgrounds/razer-blade-16-18-homepage-desktop.jpg");
+}
+.razer-hammerhead {
+  background-image: url("/Backgrounds/razer-hammerhead-hyperspeed-xbox-homepage-desktop1x.jpg");
+}
+.new-year-special {
+  background-image: url("/Backgrounds/new-year-new-gear-950x580-desktop.jpg");
+}
+.razer-enki-pro {
+  background-image: url("/Backgrounds/enkipro-lamborghini-b-desktop.jpg");
+}
+.razer-naga {
+  background-image: url("/Backgrounds/razer-naga-v2-pro-wow-dragonflight--950x580-desktop.jpg");
+}
+.razerstore-orlando {
+  background-image: url("/Backgrounds/razerstore-orlando-b-950x580-desktop.jpg");
+}
+.razer-leviathan {
+  background-image: url("/Backgrounds/leviathanv2-pro-b-950x580-desktop.jpg");
+}
+.choose-your-blade {
+  background-image: url("/Backgrounds/razer-blade-141517-b-950x580-desktop.jpg");
+}
+
+.title {
+  @apply text-primary-100 py-4 md:py-0;
+}
+footer div:has(> ul > .title) {
+  @apply relative md:block flex items-center justify-between border-b-[1px] border-b-primary-200 md:border-none;
+}
+footer ul,
+footer ul > div {
+  @apply flex flex-col gap-2;
+}
+footer ul li:not(.title) {
+  @apply hover:text-primary-100 hover:underline cursor-pointer transition-colors w-fit;
+}
+.mobile-nav-item {
+  @apply border-b-2 border-b-primary-200 py-4;
+}
+.mobile-nav-item:not(:has(> p)) {
+  @apply hover:text-primary-100 cursor-pointer transition-colors;
+}
+.dropdown::after {
+  content: "";
+  position: absolute;
+  background-color: red;
+  top: -0.5rem;
+  left: 85%;
+  right: 1rem;
+  height: 1rem;
+  aspect-ratio: 1;
+  rotate: 45deg;
+  @apply bg-primary-800 border-t-2 border-l-2 border-primary-200;
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+.no-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media screen and (max-width: 768px) {
+  footer ul > li:not(:is(.title)) {
+    @apply hidden;
+  }
+  footer ul > div {
+    @apply pb-4;
+  }
+}
+@media screen and (max-width: 50em) {
+  .razer-edge {
+    background-image: url("/Backgrounds/razer-edge-homepage-mobile2x.jpg");
+  }
+  .razer-blade {
+    background-image: url("/Backgrounds/razer-blade-16-18-homepage-mobile.jpg");
+  }
+  .razer-hammerhead {
+    background-image: url("/Backgrounds/razer-hammerhead-hyperspeed-xbox-homepage-mobile2x.jpg");
+  }
+  .razer-enki-pro {
+    background-image: url("/Backgrounds/enkipro-lamborghini-b-mobile.jpg");
+    background-position: center 75%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .fork-me {
+    @apply shadow-md shadow-primary-800 hover:after:bg-primary-100 hover:before:bg-primary-100 transition-colors;
+  }
+  .fork-me::after,
+  .fork-me::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: -20%;
+    z-index: -10;
+    @apply bg-razer-green;
+  }
+  .fork-me::after {
+    left: -50%;
+    right: 80%;
+  }
+  .fork-me::before {
+    left: 80%;
+    right: -50%;
+  }
+}
+/* 
+* {
+  outline: 1px solid red;
+} */
